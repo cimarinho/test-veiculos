@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "cd9ce5cd-037c-44d2-a6bf-500860c1f5c5",
+		"name": "teste-mag",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "legado",
+			"item": [
+				{
+					"name": "veiculos-legado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"OPERACAO\": \"criar\",\n    \"VEICULO\" : {\n        \"DATALANCE\": \"21/08/2020 - 13:24\",\n        \"LOTE\": \"0196\",\n        \"CODIGOCONTROLE\": \"56248\",\n        \"MARCA\": \"RENAULT\",\n        \"MODELO\": \"CLIO 16VS\",\n        \"ANOFABRICACAO\": 2007,\n        \"ANOMODELO\": 2007,\n        \"VALORLANCE\": 0,\n        \"USUARIOLANCE\": \"joao\"        \n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "veiculos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataLance\": \"10/08/2020 13:24\",\n    \"valorLance\": 11.2,\n    \"usuarioLance\": \"joao\",\n    \"lote\": {\n        \"idLote\": \"0191\",\n        \"veiculos\": {\n            \"codigoControle\": 2007,\n            \"anoFabricacao\": 2007,\n            \"marca\": {\n                \"marca\": \"Fiat\"\n            },\n            \"modelo\": {\n                \"modelo\": \"Palio 16vs\",\n                \"ano\": 2007\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http:/http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos",
+					"protocol": "http:/http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos/38f89dc9-6a14-4b5b-81fc-d313b3426069",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos",
+						"38f89dc9-6a14-4b5b-81fc-d313b3426069"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataLance\": \"10/08/2020 13:24\",\n    \"valorLance\": 1,\n    \"usuarioLance\": \"jose\",\n    \"lote\": {\n        \"idLote\": \"0191\",\n        \"codigoControle\": \"2010\",\n        \"veiculos\": {\n            \"codigoControle\": 2007,\n            \"anoFabricacao\": 2009,\n            \"marca\": {\n                \"marca\": \"Fiat\"\n            },\n            \"modelo\": {\n                \"modelo\": \"Palio 16vs\",\n                \"ano\": 2007\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos/38f89dc9-6a14-4b5b-81fc-d313b3426069",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos",
+						"38f89dc9-6a14-4b5b-81fc-d313b3426069"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos?offset=0&limit=5&sort=asc",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos-id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos/38f89dc9-6a14-4b5b-81fc-d313b3426069",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos",
+						"38f89dc9-6a14-4b5b-81fc-d313b3426069"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos-lote",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos/lote/0191",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos",
+						"lote",
+						"0191"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos-marca",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos/marca/Fiat",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos",
+						"marca",
+						"Fiat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos-modelo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos/modelo?letra=Palio 16vs",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos",
+						"modelo"
+					],
+					"query": [
+						{
+							"key": "letra",
+							"value": "Palio 16vs"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "veiculos-fabricacao-modelo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://teste-veiculo.rj.r.appspot.com/v1/leilaoVeiculos/fabricacao/2007/modelo/2007",
+					"protocol": "http",
+					"host": [
+						"teste-veiculo",
+						"rj",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"leilaoVeiculos",
+						"fabricacao",
+						"2007",
+						"modelo",
+						"2007"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
