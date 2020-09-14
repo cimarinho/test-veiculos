@@ -1,0 +1,19 @@
+{
+   "dataLance": "10/08/2020 13:24",
+   "valorLance": 11.2,
+   "usuarioLance": "joao",
+   "lote": {
+      "idLote": "0191",
+      "veiculos": {
+         "codigoControle": 2007,
+         "anoFabricacao": 2007,
+         "marca": {
+            "marca": "Fiat"
+         },
+         "modelo": {
+            "modelo": "Palio 16vs",
+            "ano": 2007
+         }
+      }
+   }
+}

@@ -1,0 +1,11 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: LeilaoVeiculos
+magalu:
+  offset: 0
+  mensagemLegadoSucesso: sucesso
+  limit: 5
+  sort: asc
+  url: http://localhost:8080/veiculos

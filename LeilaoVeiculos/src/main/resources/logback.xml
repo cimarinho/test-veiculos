@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<property name="suffixPattern" value="${LOG_LEVEL_PATTERN:-%5p} [%thread] [%X{user:-anonymous}] %-40.40logger{39} %m%n%rEx{5}" />
+
+	<logger name="br.com.magalu"  level="debug" additivity="false">
+		<appender-ref ref="CONSOLE"/>
+		<appender-ref ref="FILE"/>
+	</logger>
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>/tmp/MEULOG/simulacao.log</file>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+		<springProfile name="qa">
+			<appender-ref ref="SYSLOG_QA" />
+		</springProfile>
+		<springProfile name="prod">
+			<appender-ref ref="SYSLOG_PROD" />
+		</springProfile>
+	</root>
+
+
+</configuration>
