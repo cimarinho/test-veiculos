@@ -44,6 +44,9 @@ public class LeilaoVeiculoController implements AbstractController {
     @PostMapping
     @ApiOperation(value = "Inclusao de veiculos.")
     public ResponseEntity<LinkResponse> criar(@RequestBody @Valid LeilaoVeiculoRequest request) {
+        if (leilaoVeiculoApplication.existeCodigoControle(request.getLote().getVeiculos().getCodigoControle())) {
+            throw new LeilaoVeiculosException("Codigo Controle deve ser unico.");
+        }
         String id = leilaoVeiculoApplication.cadastrarVeiculo(lanceVeiculoRequestMapper.mapToLance(request));
         return retornaLink(String.format("%s/%s", ServletUriComponentsBuilder.fromCurrentRequestUri().build().toUriString(), id), HttpStatus.CREATED);
     }
@@ -51,7 +54,7 @@ public class LeilaoVeiculoController implements AbstractController {
     @PutMapping(value = "/{id}")
     @ApiOperation(value = "Alterar veiculo por id.")
     public ResponseEntity<LeilaoVeiculoResponse> alterar(@NotEmpty(message = "Id deve ser fornecido") @PathVariable(value = "id") String id,
-                                                         @RequestBody @Valid  LeilaoVeiculoRequest request) {
+                                                         @RequestBody @Valid LeilaoVeiculoRequest request) {
         leilaoVeiculoApplication.alterarVeiculo(lanceVeiculoRequestMapper.mapToLance(request), id);
         return retornaLink(String.format("%s", ServletUriComponentsBuilder.fromCurrentRequestUri().build().toUriString()), HttpStatus.OK);
     }
