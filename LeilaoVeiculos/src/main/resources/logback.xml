@@ -5,7 +5,7 @@
 
 	<property name="suffixPattern" value="${LOG_LEVEL_PATTERN:-%5p} [%thread] [%X{user:-anonymous}] %-40.40logger{39} %m%n%rEx{5}" />
 
-	<logger name="br.com.magalu"  level="debug" additivity="false">
+	<logger name="br.com.m" level="debug" additivity="false">
 		<appender-ref ref="CONSOLE"/>
 		<appender-ref ref="FILE"/>
 	</logger>
