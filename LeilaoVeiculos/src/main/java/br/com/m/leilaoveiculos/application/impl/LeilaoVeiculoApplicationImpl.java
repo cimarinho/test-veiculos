@@ -25,6 +25,17 @@ public class LeilaoVeiculoApplicationImpl implements LeilaoVeiculoApplication {
     @Autowired
     private LeilaoLegadoMapper leilaoLegadoMapper;
 
+    @Override
+    public Boolean  existeCodigoControle(String codigoControle) {
+        List<LeilaoVeiculo> consultar = leilaoLegadoMapper.mapToLeilao(this.leilaoLegadoService.consultar(), null);
+        for (LeilaoVeiculo itera: consultar){
+            if (itera.getLote().getVeiculos().getCodigoControle().equals(codigoControle)) {
+                return Boolean.TRUE;
+            }
+        }
+        return Boolean.FALSE;
+    }
+
     public String cadastrarVeiculo(LeilaoVeiculo lance) {
         String criar = leilaoLegadoService.criar(leilaoLegadoMapper.mapCriarLegado(lance));
         if (Objects.nonNull(criar)) {

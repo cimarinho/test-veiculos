@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface LeilaoVeiculoApplication {
 
+    Boolean  existeCodigoControle(String codigoControle);
+
     String cadastrarVeiculo(LeilaoVeiculo lance);
 
     void deletarVeiculo(String id);

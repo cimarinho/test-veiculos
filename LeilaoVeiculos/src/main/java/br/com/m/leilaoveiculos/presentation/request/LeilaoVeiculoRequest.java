@@ -1,6 +1,7 @@
 package br.com.m.leilaoveiculos.presentation.request;
 
 import br.com.m.config.LocalDateDeserializer;
+import br.com.m.leilaoveiculos.presentation.validate.CodigoControleValidation;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Getter;
 
@@ -36,6 +37,7 @@ public class LeilaoVeiculoRequest {
     @Getter
     public static class VeiculoRequest {
         @NotNull(message = "Codigo Controle é um campo obrigatório")
+        @CodigoControleValidation
         private String codigoControle;
         @NotNull(message = "Ano Fabricacao é um campo obrigatório")
         private Integer anoFabricacao;
